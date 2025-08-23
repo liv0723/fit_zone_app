@@ -7,6 +7,6 @@ public interface IClientService {
 
     public List<Client> search();
     public Client searchClient(Integer id);
-    public void save(Client client);
+    public Client saveClient(Client client);
     public void delete(Integer id);
 }

@@ -4,14 +4,17 @@ import com.fit.zone.fit_app.model.Client;
 import com.fit.zone.fit_app.repository.IClientRepository;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import java.util.Optional;
 
 import java.util.List;
 
+@Service
 public class ClientService implements IClientService{
 
     @Autowired
-    private static IClientRepository iClientRepository;
+    private IClientRepository iClientRepository;
 
     @Override
     public List<Client> search() {
@@ -21,7 +24,7 @@ public class ClientService implements IClientService{
     @Override
     public Client searchClient(Integer id) {
         //left verbose
-        Client client1 = iClientRepository.findById(id).orElse(null);
+        //Client client1 = iClientRepository.findById(id).orElse(null);
 
         //more verbose
         Optional<Client> client2 = iClientRepository.findById(id);
@@ -33,8 +36,10 @@ public class ClientService implements IClientService{
     }
 
     @Override
-    public void save(Client client) {
-        iClientRepository.save(client);
+    public Client saveClient(Client client) {
+
+        return iClientRepository.save(client);
+
     }
 
     @Override

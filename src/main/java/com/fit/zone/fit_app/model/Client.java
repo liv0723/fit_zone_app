@@ -26,4 +26,46 @@ public class Client {
     private String name;
     private String lastname;
     private Integer membreship;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public Integer getMembreship() {
+        return membreship;
+    }
+
+    public void setMembreship(Integer membreship) {
+        this.membreship = membreship;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", membreship=" + membreship +
+                '}';
+    }
 }
